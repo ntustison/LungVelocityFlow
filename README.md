@@ -53,11 +53,9 @@ The 4-D lung CT data set with landmarks (Case 1) is taken from the
 [Deformable Image Registration Laboratory](https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/downloads-and-reference-data/4dct.html) at 
 Johns Hopkins University with reference to the following citation:
 
-* Castillo R, Castillo E, Guerra R, Johnson VE, McPhail T, Garg AK, Guerrero T.
-2009. A framework for evaluation of deformable image registration spatial accuracy 
-using large landmark point sets. Phys Med Biol 54 1849-1870.
+* Castillo R, Castillo E, Guerra R, Johnson VE, McPhail T, Garg AK, Guerrero T. 2009. A framework for evaluation of deformable image registration spatial accuracy using large landmark point sets. Phys Med Biol 54 1849-1870.
 
-The actual image and landmark data is available upon request using the 
+The image and landmark data is available upon request using the 
 link above.  In order to work with the ITK IO used in ANTsX, we created
 corresponding .hdr files which are included in the Data directory.  After
 downloading the Case 1 data, one can reproduce the results produced in this
