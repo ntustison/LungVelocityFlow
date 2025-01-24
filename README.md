@@ -395,64 +395,24 @@ for i in range(20):
 </details>
 
 
-### Using the DevCCF Velocity Flow Model
+### Using the lung velocity flow model
 
 <details>
-<summary>Example:  Warp every template to every other template</summary>
-
-<p align="middle">
-  <img src="https://github.com/ntustison/DevCCF-Velocity-Flow/assets/324811/df61e8c6-93a7-4b1a-91b8-9deeefe700bb" width="550" />
-</p>
+<summary>Example:  Warp T00 in a continuous manner from identity to T50</summary>
 
 ```python
 import ants
 import numpy as np
 import math
 
-atlas_ids = tuple(reversed(("E11-5", "E13-5", "E15-5", "E18-5", "P04", "P14", "P56")))
-time_points = np.flip(-1.0 * np.log(np.array((11.5, 13.5, 15.5, 18.5, 23, 33, 47))))
-normalized_time_points = (time_points - time_points[0]) / (time_points[-1] - time_points[0])
+base_directory = "../"
+data_directory = base_directory + "Data/Case1Pack/"
 
-velocity_field = ants.image_read("Data/Output/DevCCF_velocity_flow.nii.gz")
-
-# Read template files.
-# template_files = list()
-# for i in range(len(atlas_ids)):
-#      fa_template_files.append(glob.glob(atlas_ids[i] + "*.nii.gz")[0])
-
-for i in range(len(atlas_ids)):
-    for j in range(len(atlas_ids)):
-        print("Warping ", atlas_ids[j], "to", atlas_ids[i])
-        reference_template = ants.image_read(template_files[i])
-        moving_template = ants.image_read(template_files[j])
-        displacement_field = ants.integrate_velocity_field(velocity_field,
-                                                           normalized_time_points[i],
-                                                           normalized_time_points[j], 10)
-        displacement_field_xfrm = ants.transform_from_displacement_field(displacement_field)
-        warped_template = displacement_field_xfrm.apply_to_image(moving_template,
-                                                                 interpolation="linear")
-```
-
-</details>
-
-
-<details>
-<summary>Example:  Warp P56 in a continuous manner from identity to E11.5</summary>
-
-<p align="middle">
-  <img src="https://github.com/ntustison/DevCCF-Velocity-Flow/assets/324811/a8412f23-9167-4cbe-9c7d-021ad97f4429" width="550" />
-</p>
-
-```python
-import ants
-import numpy as np
-import math
-
-velocity_field = ants.image_read("DevCCF_flow_model.nii.gz")
-P56 = ants.image_read("P56.nii.gz")  
+velocity_field = ants.image_read(data_directory + "VelocityFlow/lung_velocity_flow.nii.gz")
+T00 = ants.image_read(data_directory + "ReorientedImages/case1_T00_s.nii.gz")  
 
 # We discretize the time domain into 50 intervals.
-time_points = np.flip(-1.0 * np.log(np.linspace(11.5, 47, 50)))
+time_points = np.linspace((0, 5, 50))
 normalized_time_points = (time_points - time_points[0]) / (time_points[-1] - time_points[0])
 
 for i in range(len(normalized_time_points)):
