@@ -49,16 +49,51 @@ following plots:
 <details>
 <summary>Data</summary>
 
+% tree Data   
+└── Case1Pack
+    ├── ExtremePhases
+    │   ├── Case1_300_T00_xyz.txt
+    │   └── Case1_300_T50_xyz.txt
+    ├── Images
+    │   ├── case1_T00_s.hdr
+    │   ├── case1_T00_s.img
+    │   ├── case1_T10_s.hdr
+    │   ├── case1_T10_s.img
+    │   ├── case1_T20_s.hdr
+    │   ├── case1_T20_s.img
+    │   ├── case1_T30_s.hdr
+    │   ├── case1_T30_s.img
+    │   ├── case1_T40_s.hdr
+    │   ├── case1_T40_s.img
+    │   ├── case1_T50_s.hdr
+    │   ├── case1_T50_s.img
+    │   ├── case1_T60_s.hdr
+    │   ├── case1_T60_s.img
+    │   ├── case1_T70_s.hdr
+    │   ├── case1_T70_s.img
+    │   ├── case1_T80_s.hdr
+    │   ├── case1_T80_s.img
+    │   ├── case1_T90_s.hdr
+    │   └── case1_T90_s.img
+    └── Sampled4D
+        ├── case1_4D-75_T00.txt
+        ├── case1_4D-75_T10.txt
+        ├── case1_4D-75_T20.txt
+        ├── case1_4D-75_T30.txt
+        ├── case1_4D-75_T40.txt
+        └── case1_4D-75_T50.txt
+
+
+
+
 For simplicity only the data used to create the velocity flow model is 
 [available in this repository](https://github.com/ntustison/DevCCF-Velocity-Flow/tree/main/Data/DevCCFSimpleSegmentations).
 These label images are the simplified annotations comprising common regions
 across all developmental stages and are based on the DevCCF pre-released 
 segmentations version 3.8.    
 
-<p align="middle">
-  <img src="https://github.com/ntustison/DevCCF-Velocity-Flow/assets/324811/3f3a4369-eb82-4dce-b1a3-3e4481f66509" width="450" />
-</p>
-</details>
+
+
 
 ### Reproducing the DevCCF Velocity Flow Model
 
