@@ -49,6 +49,21 @@ following plots:
 <details>
 <summary>Data</summary>
 
+The 4-D lung CT data set with landmarks (Case 1) is taken from the 
+[Deformable Image Registration Laboratory](https://med.emory.edu/departments/radiation-oncology/research-laboratories/deformable-image-registration/downloads-and-reference-data/4dct.html) at 
+Johns Hopkins University with reference to the following citation:
+
+* Castillo R, Castillo E, Guerra R, Johnson VE, McPhail T, Garg AK, Guerrero T.
+2009. A framework for evaluation of deformable image registration spatial accuracy 
+using large landmark point sets. Phys Med Biol 54 1849-1870.
+
+The actual image and landmark data is available upon request using the 
+link above.  In order to work with the ITK IO used in ANTsX, we created
+corresponding .hdr files which are included in the Data directory.  After
+downloading the Case 1 data, one can reproduce the results produced in this
+repository by ensuring that the downloaded data is incorporated into the 
+repository directory structure as follows:
+
 ```bash
 % tree Data   
 └── Case1Pack
@@ -85,18 +100,7 @@ following plots:
         └── case1_4D-75_T50.txt
 ```
 
-
-
-For simplicity only the data used to create the velocity flow model is 
-[available in this repository](https://github.com/ntustison/DevCCF-Velocity-Flow/tree/main/Data/DevCCFSimpleSegmentations).
-These label images are the simplified annotations comprising common regions
-across all developmental stages and are based on the DevCCF pre-released 
-segmentations version 3.8.    
-
-
-
-
-### Reproducing the DevCCF Velocity Flow Model
+### Reproducing the lung velocity flow model
 
 <details>
 <summary>Step 1:  Prepare the data</summary>
