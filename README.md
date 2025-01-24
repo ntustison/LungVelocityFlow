@@ -1,6 +1,4 @@
-# Modeling 4-D lung dynamics with a velocity flow transformation model 
-
----
+## Modeling 4-D lung dynamics with a velocity flow transformation model 
 
 ### Description
 
