@@ -86,6 +86,8 @@ repository directory structure as follows:
         ├── case1_4D-75_T40.txt
         └── case1_4D-75_T50.txt
 ```
+</details>
+
 
 ### Reproducing the lung velocity flow model
 
