@@ -371,18 +371,19 @@ if os.path.exists(velocity_field_file):
     initial_velocity_field = ants.image_read(velocity_field_file)
 
 # We could simply set the total number of iterations (i.e., "number_of_compositions")
-# to 10 * 20 but just so we could check the progress, we run the optimization for 10
+# to 10 * 30 but just so we could check the progress, we run the optimization for 10
 # iterations and then write the velocity field to disk and use it as the initial 
 # velocity field for subsequent iterations.
 
-for i in range(20):
+
+for i in range(30):
     print("Iteration " + str(i))
     tv = ants.fit_time_varying_transform_to_point_sets(point_sets, 
         time_points=normalized_time_points,
         displacement_weights=weights,
         initial_velocity_field=initial_velocity_field,
         number_of_time_steps=7, domain_image=fixed_labels,
-        number_of_fitting_levels=3, mesh_size=(10, 10, 9), 
+        number_of_fitting_levels=3, mesh_size=(8, 8, 7), 
         number_of_compositions=10,
         convergence_threshold=0.0, composition_step_size=0.2,
         number_of_integration_steps=10,
