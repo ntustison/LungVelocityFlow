@@ -1,5 +1,9 @@
 ## Modeling 4-D lung dynamics with a velocity flow transformation model 
 
+<p align="middle">
+  <img src="https://github.com/ntustison/LungVelocityFlow/blob/main/Documents/Figures/lungVelocityFlow.png" width="700"/>
+</p>
+
 ### Description
 
 A time-varying mapping modeling dynamic lung behavior across a 4D-CT acquistion
